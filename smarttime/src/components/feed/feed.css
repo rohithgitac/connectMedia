@@ -1,0 +1,7 @@
+.feed{
+    flex:6;
+    overflow-y: scroll;
+}
+.feed-container{
+    padding: 20px;
+}

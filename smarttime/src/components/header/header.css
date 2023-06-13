@@ -1,0 +1,90 @@
+.topbar{
+    display: flex;
+    height: 50px;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(156, 86, 222);
+    position: sticky;
+    top: 0;
+}
+.topbar-left{
+    flex: 3;
+    margin-left: 1.5rem;
+}
+.topbar-logo{
+    font-size: 2rem;
+    font-weight:bold;
+    color: aliceblue;
+    text-shadow: -4px 2px black;
+    cursor: pointer;
+}
+.topbar-center{
+    flex: 4;
+}
+.topbar-search{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: white;
+    border-radius: 20px;
+    width: 100%;
+    height: 30px;  
+}
+.topbar-s{
+    margin-left: 5px;
+}
+.topbar-search >input {
+    border: none;
+    width: 60%;
+    outline: none;
+}
+.topbar-right{
+    flex: 5;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 1.5rem;
+}
+.topbar-link{
+    flex: 2;
+    color: white;
+    cursor: pointer;
+
+}
+.topbar-link:first-child{
+    margin-left: 20px;
+}
+.topbar-icons{
+    flex: 3;
+    display: flex;
+    justify-content: space-around;
+     
+}
+.topbar-icon-item{
+    color: white;
+    cursor: pointer;
+    position: relative;
+}
+.topbar-icon-item > span{
+    font-size: 12px;
+    width: 15px;
+    height: 15px;
+    background-color: red;
+    border-radius: 50%;
+    color: white;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.topbar-right > img{
+    margin-left: 1rem;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+}

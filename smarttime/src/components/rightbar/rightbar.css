@@ -1,0 +1,114 @@
+.rightbar{
+    flex: 3;
+
+}
+.rightbar-container{
+    padding: 15px;
+}
+.birthday{
+    border-radius: 10px;
+    box-shadow: 0px 0px 16px -8px rgba(0,0,0,0.68);
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+.birthday >span{
+    font-size: 15px;
+    font-weight:300;
+}
+.ads-container{
+    margin-top: 10px;
+    height: 200px;
+    width: 100%;
+}
+.rightbar-container >h4{
+    margin: 10px 0 1px 0;
+}
+.friends-list{
+    list-style: none;
+    margin: 0;
+    padding: 5px;
+    background-color: #ffff;
+    border-radius: 5px;
+    height: 150px;
+    overflow-y: scroll;
+}
+.friends-list-item{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    position: relative;
+}
+.friends-list-item:hover{
+    background-color: rgb(234, 234, 234);
+    cursor: pointer;
+}
+.friends-list-item >img{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.online{
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: limegreen;
+    position: absolute;
+    top: 0px;
+    left: 20px;
+    border: 2px solid white;
+}
+.online-name{
+    margin-left: 8px;
+}
+
+/* //PROFILE RIGHT baR  */
+
+.profile-right{
+    background-color: #fff;
+}
+.profile-right >h3{
+    font-size: 16px;
+    font-weight: 800;
+    margin-bottom: 7px;
+}
+.profile-right-info{
+    margin-bottom: 18px;
+}
+.profile-right-info-item{
+    margin-bottom: 6px;
+}
+.key-name{
+    font-size: 14px;
+    font-weight: 600;
+    margin-right: 4px;
+}
+.value-name{
+    font-size: 14px;
+    font-weight: 300;
+    color: #555;
+}
+.profile-followers{
+    display: flex;
+    flex-wrap: wrap;
+}
+.profile-follower{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 6px;
+}
+.profile-follower >img{
+    width: 70px;
+    height: 70px;
+    border-radius: 6px;
+    object-fit: cover;
+}
+.profile-follower >span{
+    font-size: 13px;
+    font-weight: 600;
+    padding: 5px;
+}

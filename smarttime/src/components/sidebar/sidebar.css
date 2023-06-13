@@ -1,0 +1,70 @@
+.sidebar{
+    flex: 3;
+    height: calc(100vh - 50px);
+    overflow-y: scroll ;
+}
+::-webkit-scrollbar{
+    width: 5px;
+}
+::-webkit-scrollbar-track{
+    background-color: #f1f1f1;
+}
+::-webkit-scrollbar-thumb{
+    background-color: rgb(205, 190, 222);
+}
+.sidebar-container{
+    padding: 0.5rem 0.8rem 0.2rem 1rem;
+}
+.sidebar-list{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.sidebar-listitem{
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.6rem;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 3px;
+}
+.sidebar-listitem:hover{
+    background-color: #f2f0f0;
+    cursor: pointer;
+}
+.sidebar-listitem >span{
+    margin-left: 0.5rem;
+}
+.sidebar-container >button {
+    width: 100%;
+    padding: 0.2rem;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.sidebar-container >button:hover{
+    background-color: rgb(223, 216, 216);
+}
+.sidebar-container > hr {
+    margin: 0.5rem 0;
+}
+.sidebar-friendslist{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background-color: #f1f1f1;
+}
+.sidebar-friends{
+    background-color: #f1f1f1;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+.sidebar-friends > img{
+    width: 2rem;
+    height: 2rem;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 10px;
+}

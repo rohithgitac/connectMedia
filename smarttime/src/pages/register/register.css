@@ -1,0 +1,94 @@
+.login{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.login-container{
+    width: 70%;
+    min-width: 200px;
+    height: 90%;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+.register-left,.login-right{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+@media only screen and (max-width:800px) {
+    .login-container{
+        display: flex;
+        flex-direction: column;
+    }
+    .register-left{
+        flex: 1;
+        height: 90px;
+    }
+    .login-right{
+        flex: 11;
+    }
+    .login-box{
+        height: auto;
+        margin-top: -20px;
+    }
+}
+.register-left >h2{
+    font-size:  6vw;
+    min-block-size: 30px;
+    font-weight: 800;
+    color: rgb(156, 86, 222);
+    text-shadow: -2px -2px black;
+    margin-bottom: 3px;
+}
+.register-left >span{
+    font-size: 2vw;
+}
+.login-box{
+    height: 70%;
+    background-color:  rgba(185, 144, 222, 0.874);
+    padding: 30px;
+    height: fit-content;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: -2px 4px 5px gray;
+}
+.login-box >input{
+    margin: 5px;
+    padding: 10px;
+    border: none;
+    background-color:  rgba(218, 211, 224, 0.154);
+    color: white;
+    font-size: 17px;
+    border-bottom: 2px solid blue;
+    outline: none;
+
+}
+.login-button,.new-account{
+    margin: 5px;
+    background-color: rgba(58, 58, 245, 0.888);
+    color: white;
+    padding: 10px;
+    border: none;
+    font-size: 17px;
+    border-radius: 18px;
+    cursor: pointer;
+}
+::placeholder{
+    color: rgb(243, 243, 243);
+}
+.login-button:hover{
+    background-color: blue;
+}
+.new-account{
+    background-color: rgba(4, 104, 61, 0.888);
+}
+.new-account:hover{
+    background-color: green;
+}
