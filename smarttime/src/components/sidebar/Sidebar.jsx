@@ -1,11 +1,28 @@
-import React from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import './sidebar.css'
+import instance from '../../axios'
+import {AuthContext} from '../../context/AuthContext'
+import {Link} from 'react-router-dom'
 import {RssFeed,
     PlayCircleFilledOutlined,
     Group,
     Bookmark,
     HelpOutline,WorkOutline,Event,School} from '@mui/icons-material'
 const Sidebar = () => {
+
+    const {state,dispatch} = useContext(AuthContext)
+    const {user} = state.state1
+    
+    const [mayKnow,setMayKnow] = useState(null)
+    useEffect(() => {
+        const suggestionFetch = async() => {
+            const body = {_id:user._id}
+            const suggestion = await instance.put(`/connect/user/${user._id}/suggestion`,body)
+            setMayKnow(suggestion.data)
+        }
+        suggestionFetch()
+    },[user._id])
+
   return (
     <div className='sidebar'>
         <div className="sidebar-container">
@@ -45,75 +62,18 @@ const Sidebar = () => {
             </ul>
             <button>Show more</button>
             <hr/>
+            <h4>Friends you may know</h4>
             <ul className='sidebar-friendslist'>
+                    {mayKnow && mayKnow.map((person) => 
+                <Link key={person._id} to={`/profile/${person._id}`}
+                    style={{textDecoration:'none',color:'darkviolet',fontWeight:'550'}}>    
                 <li className='sidebar-friends'>
-                    <img src="rohith.jpg " alt="img" />
-                    <span>Friend name</span>
+                    <img src={ person.profilePic ? person.profilePic : '/noProfile.png'} alt="img" />
+                    <span>{person.userName}</span>
                 </li>
-                <li className='sidebar-friends'>
-                    <img src="rohith.jpg " alt="img" />
-                    <span>Rohith</span>
-                </li>
-                <li className='sidebar-friends'>
-                    <img src="rohith.jpg " alt="img" />
-                    <span>Rohith</span>
-                </li>
-                <li className='sidebar-friends'>
-                    <img src="rohith.jpg " alt="img" />
-                    <span>Rohith</span>
-                </li>
-                <li className='sidebar-friends'>
-                    <img src="rohith.jpg " alt="img" />
-                    <span>Rohith</span>
-                </li>
-                <li className='sidebar-friends'>
-                    <img src="rohith.jpg " alt="img" />
-                    <span>Rohith</span>
-                </li>
-                <li className='sidebar-friends'>
-                    <img src="rohith.jpg " alt="img" />
-                    <span>Rohith</span>
-                </li>
-                <li className='sidebar-friends'>
-                    <img src="rohith.jpg " alt="img" />
-                    <span>Rohith</span>
-                </li>
-                <li className='sidebar-friends'>
-                    <img src="rohith.jpg " alt="img" />
-                    <span>Rohith</span>
-                </li>
-                <li className='sidebar-friends'>
-                    <img src="rohith.jpg " alt="img" />
-                    <span>Rohith</span>
-                </li>
-                <li className='sidebar-friends'>
-                    <img src="rohith.jpg " alt="img" />
-                    <span>Rohith</span>
-                </li>
-                <li className='sidebar-friends'>
-                    <img src="rohith.jpg " alt="img" />
-                    <span>Rohith</span>
-                </li>
-                <li className='sidebar-friends'>
-                    <img src="rohith.jpg " alt="img" />
-                    <span>Rohith</span>
-                </li>
-                <li className='sidebar-friends'>
-                    <img src="rohith.jpg " alt="img" />
-                    <span>Rohith</span>
-                </li>
-                <li className='sidebar-friends'>
-                    <img src="rohith.jpg " alt="img" />
-                    <span>Rohith</span>
-                </li>
-                <li className='sidebar-friends'>
-                    <img src="rohith.jpg " alt="img" />
-                    <span>Rohith</span>
-                </li>
-                <li className='sidebar-friends'>
-                    <img src="rohith.jpg " alt="img" />
-                    <span>Rohith</span>
-                </li>
+                </Link>
+                    )}
+                
             </ul>
         </div>
     </div>

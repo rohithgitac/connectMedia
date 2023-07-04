@@ -30,21 +30,25 @@ router.post('/register',async(req,res) => {
 //Login
 router.post('/login',async(req,res) => {
     const checkData = req.body;
+    console.log(checkData)
     if(Object.keys(checkData).length === 0){
         res.status(400).send({msg:'No client data received..!'})
     }
     else{
-        try {
+        try{
             const validData = await User.findOne({email:checkData.email});
-            if(validData === null){ res.status(404).json({msg:"Invalid email!"}) }
-            else{
+            console.log(validData)
+            if(validData === null){ 
+                return res.status(401).json({msg:"Invalid email!"}) }
+            if(validData){
             const checkPassword = await bcrypt.compare(checkData.password,validData.password);
-            checkPassword === false ? res.status(404).json({msg:'Invalid password!'})
-                :res.status(200).json(validData)
+            const {password,...others} = validData._doc;
+            checkPassword === false ?  res.status(401).json({msg:'Invalid password!'})
+                :
+                res.status(200).json(others)
             }    
-        } catch (error) {
-            console.error(error);
-            res.status(500).json({msg:'Internal server error-login'})
+        }catch(error){
+            res.status(500).json({msg:error});
         }
     }
 })

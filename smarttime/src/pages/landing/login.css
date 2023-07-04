@@ -8,10 +8,9 @@
 .login-container{
     width: 70%;
     min-width: 200px;
-    height: 90%;
+    height: 95% ;
     display: flex;
     flex-wrap: wrap;
-
 }
 .login-left,.login-right{
     flex: 1;
@@ -32,6 +31,9 @@
     .login-right{
         flex: 11;
     }
+    .login-box{
+        height: 100% !important;
+    }
 }
 .login-left >h2{
     font-size: 50px;
@@ -44,7 +46,7 @@
     font-size: 24px;
 }
 .login-box{
-    height: 70%;
+    height: 80% !important;
     background-color:  rgba(185, 144, 222, 0.874);
     padding: 30px;
     box-shadow: -2px 4px 5px gray;
@@ -52,21 +54,24 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    
 }
 .login-box >input{
-    margin: 5px;
+    margin: 2px;
     padding: 10px;
     border: none;
     background-color:  rgba(218, 211, 224, 0.154);
     color: white;
-    font-size: 17px;
-    border-bottom: 2px solid blue;
+    font-size: 19px;
+    border-bottom: 2px solid rgb(138, 222, 196);
     outline: none;
-
+}
+.login-box >span{
+    margin-left: 5px;
+    font-weight: 500;
 }
 .login-button,.new-account{
-    margin: 5px;
-    background-color: rgba(58, 58, 245, 0.888);
+    margin: 2px;
     color: white;
     padding: 10px;
     border: none;
@@ -77,12 +82,27 @@
 ::placeholder{
     color: rgb(243, 243, 243);
 }
+.login-button{
+    background-color:rgba(58, 58, 245, 0.888) !important;
+}
 .login-button:hover{
-    background-color: blue;
+    background-color: rgb(41, 97, 165) !important ;
 }
 .new-account{
-    background-color: rgba(4, 104, 61, 0.888);
+    background-color: green !important;
 }
 .new-account:hover{
-    background-color: green;
+    background-color: rgba(4, 104, 61, 0.888) !important;
+}
+.errorMsg{
+    margin: 0 5px 0 5px;
+    padding: 3px;
+    background-color: white;
+    color: red;
+    border-radius: 2px;
+    display: flex;
+    justify-content: center;
+}
+.noError{
+    visibility: hidden;
 }

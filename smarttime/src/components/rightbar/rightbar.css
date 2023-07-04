@@ -3,7 +3,7 @@
 
 }
 .rightbar-container{
-    padding: 15px;
+    padding: 12px;
 }
 .birthday{
     border-radius: 10px;
@@ -94,12 +94,14 @@
 .profile-followers{
     display: flex;
     flex-wrap: wrap;
+    align-items: flex-start;
+    
 }
 .profile-follower{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 6px;
+    margin: 4px;
 }
 .profile-follower >img{
     width: 70px;
@@ -110,5 +112,5 @@
 .profile-follower >span{
     font-size: 13px;
     font-weight: 600;
-    padding: 5px;
+    padding: 4px;
 }

@@ -49,17 +49,24 @@
 .sidebar-container > hr {
     margin: 0.5rem 0;
 }
+.sidebar-container >h4{
+    font-weight: 700;
+    margin: 2px 0;
+}
 .sidebar-friendslist{
     margin: 0;
     padding: 0;
     list-style: none;
-    background-color: #f1f1f1;
+    background-color: white;
 }
 .sidebar-friends{
-    background-color: #f1f1f1;
     display: flex;
     align-items: center;
     margin-bottom: 0.5rem;
+}
+.sidebar-friends:hover{
+    background-color: #f1f1f1;
+    cursor: pointer;
 }
 .sidebar-friends > img{
     width: 2rem;
@@ -68,3 +75,4 @@
     border-radius: 50%;
     margin-right: 10px;
 }
+

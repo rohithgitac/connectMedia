@@ -3,7 +3,8 @@ import './ads.css'
 const Ads = () => {
   return (
     <>
-        <img src="rohith.jpg" alt="img" />
+        <img src="chair.jpg"
+         alt="img" />
     </>
   )
 }

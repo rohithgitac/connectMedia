@@ -22,14 +22,18 @@ const userSchema = new mongoose.Schema({
         type:String,
         default:''
     },
-    followers:{
-        type:Array,
-        default:[]
-    },
-    following:{
-        type:Array,
-        default:[]
-    },
+    followers:[{
+        user:{
+            type:mongoose.Schema.Types.ObjectId,
+            ref:'User'
+        }
+    }],
+    following:[{
+        user:{
+            type:mongoose.Schema.Types.ObjectId,
+            ref:'User'
+        }}
+    ],
     isAdmin:{
         type:Boolean,
         default:false
@@ -41,12 +45,10 @@ const userSchema = new mongoose.Schema({
         type:String
     },
     gender:{
-        type:Number,
-        enum:[1,2,3]
+        type:String,
     },
     relationship:{
-        type:Number,
-        enum:[1,2,3]
+        type:String,
     }
 },
 {timestamps:true});
