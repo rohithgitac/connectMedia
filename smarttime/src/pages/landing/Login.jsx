@@ -1,5 +1,5 @@
 import React, { Component, useContext, useEffect, useRef, useState } from 'react';
-import "./Login.css";
+import "./login.css";
 import { loginCall } from '../../apiCalls';
 import { AuthContext } from '../../context/AuthContext';
 import {Visibility,VisibilityOff} from '@mui/icons-material'

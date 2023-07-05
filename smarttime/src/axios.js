@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const instance = axios.create({
-    baseURL:'http://127.0.0.1:8002'
+    baseURL:'https://connect-media.onrender.com/'
 })
 
 export default instance
