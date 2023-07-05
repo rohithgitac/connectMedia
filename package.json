@@ -1,5 +1,5 @@
 {
-  "name": "socialmedia connect app",
+  "name": "connectapp",
   "version": "1.0.0",
   "description": "social media web app connect",
   "main": "server.js",
