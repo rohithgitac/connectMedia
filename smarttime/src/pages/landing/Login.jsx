@@ -34,7 +34,7 @@ const Login = () => {
         <div className="login-container">
             <div className="login-left">
                 <h2>ConnecT</h2>
-                <span>Connect you to a new world and dreams...</span>
+                <span>Connect to your social bondings...</span>
             </div>
             <div className="login-right">
               <form className="login-box" onSubmit={handleLogin}>
@@ -45,7 +45,7 @@ const Login = () => {
                 <IconButton className='eye' onClick={visibilityHandler}>{showPassword ?<VisibilityOff fontSize='small'/>:<Visibility fontSize='small'/>}</IconButton>
                 </div>             
                 <button type='submit' className='login-button'>Login</button>
-                <span>Forgot password..?<a href="">click here..</a></span>
+                {/* <span>Forgot password..?<a href="">click here..</a></span> */}
                 <button type='button' className='new-account'><Link to='/register' style={{textDecoration:'none',color:'white'}}>Create a new account</Link></button>
               </form>
             </div>

@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import './header.css'
+import HouseIcon from '@mui/icons-material/House';
 import {Search,AccountBox,Chat,NotificationsActive} from '@mui/icons-material'
 import { AuthContext } from '../../context/AuthContext'
 const Header = () => {
@@ -30,8 +31,9 @@ const Header = () => {
         </div>
       </div>
       <div className='topbar-right'>
-        <span className="topbar-link">Home</span>
-        <span className="topbar-link"><Link to='/profile'>Timeline</Link></span>
+        <span className="topbar-link"><Link to='/' style={{textDecoration:'none',color:'lightgreen',display:'flex',alignItems:'center'}}><HouseIcon/> Home</Link></span>
+        <span className="topbar-link"><Link style={{textDecoration:'none',color:'white'}} to='/profile'>Timeline</Link></span>
+        <span className="topbar-link" style={{color:'orange'}} onClick={logoutHandler}>Logout</span>
         <div className="topbar-icons">
           <div className="topbar-icon-item">
           <AccountBox/>
@@ -46,7 +48,7 @@ const Header = () => {
           <span>2</span>
           </div>
        </div>
-       <img src={user.profilePic ? user.profilePic:'/noProfile.png'} alt="img" onClick={logoutHandler} />
+       <img src={user.profilePic ? user.profilePic:'/noProfile.png'} alt="img"  />
       </div>
     </div>
     </nav>
