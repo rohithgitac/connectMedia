@@ -111,7 +111,7 @@ if(others && otherProfile){
     <>
       <Header/>
       <div className="profile">
-        <Sidebar/>
+        <div className='leftSidebar' ><Sidebar/></div>
         <div className="profile-right">
             <div className="profile-right-top">
                 <div className="profile-photo-container">
@@ -136,8 +136,8 @@ if(others && otherProfile){
             </div>
             <hr />
             <div className="profile-right-bottom">
-                <Feed  otherProfilePosts={otherProfilePosts} setShowEditProfile={setShowEditProfile} />
-                <Rightbar profile={otherProfile} friendData={friendData}/>
+                <div className='profileFeed'><Feed  otherProfilePosts={otherProfilePosts} setShowEditProfile={setShowEditProfile} /></div>
+                <div className='rightSidebar'><Rightbar profile={otherProfile} friendData={friendData}/></div>
             </div>
         </div>
       </div>
@@ -148,7 +148,7 @@ if(others && otherProfile){
       <>
         <Header/>
         <div className="profile">
-          <Sidebar/>
+          <div className='leftSidebar'><Sidebar/></div>
           <div className="profile-right">
               <div className="profile-right-top">
                   <div className="profile-photo-container">
@@ -169,8 +169,8 @@ if(others && otherProfile){
               {showalert && <AlertBox message={'Are you sure to delete..??'}/>}
               <hr />
               <div className="profile-right-bottom">
-                  <Feed display={showEditProfile} profile={true} setShowEditProfile={setShowEditProfile} />
-                  <Rightbar profile={user} friendData={friendData}/>
+                  <div className='profileFeed'><Feed display={showEditProfile} profile={true} setShowEditProfile={setShowEditProfile} /></div>
+                  <div className='rightSidebar'><Rightbar profile={user} friendData={friendData}/></div>
               </div>
           </div>
         </div>

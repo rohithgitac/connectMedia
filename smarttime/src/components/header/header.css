@@ -88,3 +88,20 @@
     object-fit: cover;
     cursor: pointer;
 }
+/* Low screens */
+@media (max-width:768px) {
+    .topbar-logo{
+        font-size: 5vw;
+    }
+    .topbar-icons{
+        display: none;
+    }
+    .topbar-center{
+        margin-left: 1vw;
+        width: 10vw;
+    }
+    .topbar-link{
+        font-size: 2vw;
+        margin: 1vw ;
+    }
+}

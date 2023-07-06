@@ -3,8 +3,39 @@
     width: 100%;
     height: calc(100vh - 50px); 
 }
+.leftSidebar{
+    width: 35%;
+}
+.profileFeed{
+    width: 70%;
+}
+.rightSidebar{
+    width: 30%;
+}
+@media (max-width:768px){
+    .leftSidebar{
+        display: none;
+    }
+    .profile-right{
+        width: 100%;
+    }
+    .profile-right-bottom{
+        display: flex;
+        flex-direction: column-reverse;
+        
+    }
+    .profileFeed{
+        width: 100%;
+    }
+    .rightSidebar{
+        width: 100%;
+        padding: 0px 10px;
+    }
+}
 .profile-right{
-    flex: 9;
+    /* flex: 9; */
+    width: 100%;
+    flex-grow: 1;
     overflow-y: scroll;
     overflow-x: hidden;
 }

@@ -1,5 +1,6 @@
 import React, { useContext, useEffect } from 'react'
 import './home.css'
+import '../../components/header/header.css'
 import Header from '../../components/header/Header'
 import Sidebar from '../../components/sidebar/Sidebar'
 import Feed from '../../components/feed/Feed'
@@ -31,13 +32,29 @@ const Home = () => {
      
   }, [post,user,dispatch])
   
+  useEffect(() => {
+    const toggleButton = document.getElementById('toggleButton');
+    const leftSidebar = document.querySelector('.left-sidebar');
+
+    const toggleSidebars = () => {
+      leftSidebar.classList.toggle('sidebarA');
+    };
+
+    toggleButton.addEventListener('click', toggleSidebars);
+
+    return () => {
+      toggleButton.removeEventListener('click', toggleSidebars);
+    };
+  }, []);
+
   return (
     <>
-      <Header/>
+      <div  className='main-header'><Header/></div>
+      <button id="toggleButton" >^</button>
       <div className="body-container">
-        <Sidebar/>
-        <Feed home={true}  />
-        <Rightbar/>
+        <div className='sidebarA left-sidebar'><Sidebar/></div>
+        <div className='main-content'><Feed home={true}  /></div>
+        <div className='sidebarB right-sidebar'><Rightbar/></div>
       </div>
     </>  
   )
