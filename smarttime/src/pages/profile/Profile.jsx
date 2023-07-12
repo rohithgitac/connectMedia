@@ -8,6 +8,7 @@ import { AuthContext } from '../../context/AuthContext'
 import { useParams } from 'react-router-dom'
 import instance from '../../axios'
 import AlertBox from '../../components/alert/AlertBox'
+import { CircularProgress } from '@mui/material'
 const Profile = ({others}) => {
 
   const [showEditProfile,setShowEditProfile] = useState(false)
@@ -151,6 +152,7 @@ if(others && otherProfile){
           <div className='leftSidebar'><Sidebar/></div>
           <div className="profile-right">
               <div className="profile-right-top">
+                {loading ?  <CircularProgress/> :
                   <div className="profile-photo-container">
                       <img className='cover-photo' src={user.coverPic ? user.coverPic
                            : 'noCover.png'} alt="img" />
@@ -160,7 +162,7 @@ if(others && otherProfile){
                           <h4>{user.userName}</h4>
                           <p>" {user.about} " </p>
                       </div>
-                  </div>
+                  </div>}
               </div>
               <div className="profile-buttons">
                 <button onClick={editProfileHandler}>Edit Profile</button>

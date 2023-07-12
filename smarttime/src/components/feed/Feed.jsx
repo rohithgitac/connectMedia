@@ -6,6 +6,7 @@ import instance from '../../axios'
 import { AuthContext } from '../../context/AuthContext'
 import EditProfile from '../editProfile/EditProfile'
 import { getAllTimeline } from '../../apiCalls'
+import LinearProgress from '@mui/material/LinearProgress';
 import { CircularProgress } from '@mui/material'
 import { GET_HOME_POST_FAIL, GET_HOME_POST_START, GET_HOME_POST_SUCCESS, GET_TIMELINE_POST_FAIL, GET_TIMELINE_POST_START, GET_TIMELINE_POST_SUCCESS } from '../../constants'
 
@@ -60,7 +61,11 @@ const Feed = ({display,profile,setShowEditProfile,home,otherProfilePosts}) => {
           :home ?(
               <>  
                <Share />
+               
                <>{
+               loadHomePost ?
+               <LinearProgress 
+               color='secondary' style={{marginTop:'20px',height:'20px',borderRadius:'20px'}}/> :
                allHomePost && allHomePost.map((post) =>
                (<Post key={post._id} postDetails={post}/>)
                )
